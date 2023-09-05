@@ -1,0 +1,55 @@
+{% extends 'base_page.html'%}
+{% block content%}
+
+    <center>
+    <h1>Welcome to Weather-Alert-App</h1>
+    <br/> <br/>
+
+    {% if submitted%}
+        Congradulations, your account was successfully created.
+    {%else%}
+        
+        <form class="row g-3" action="{% url 'add-user' %}" method=POST >
+            {% csrf_token %}
+
+            <div class="col-md-6">
+                <label for="" class="form-label">Username</label>
+                <input type="text" class="form-control" name= 'username'>
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" name='password'>
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">First Name</label>
+                <input type="text" class="form-control" name= 'first_name'>
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name= 'last_name'>
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" name='email'>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </div>
+
+        </form>
+
+    
+    {%endif%}
+    </center>
+{% endblock%}
+
+{% comment %} <form action="" method=POST>
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" class="btn btn-secundary" value="Sing Up">
+
+</form> {% endcomment %}
+
+
+
+
