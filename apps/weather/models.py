@@ -1,7 +1,7 @@
 from django.db import models
-
-
 from apps.core.models import CreatedModifiedAtBase
+
+
 
 # Create your models here.
 
